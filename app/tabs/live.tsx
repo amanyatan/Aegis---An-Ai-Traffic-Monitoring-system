@@ -166,7 +166,7 @@ export default function LiveFeedScreen() {
 
   return (
     <>
-    <PremiumScreen padHorizontal scroll refreshing={refreshing} onRefresh={onRefresh}>
+    <PremiumScreen padHorizontal scroll refreshing={refreshing} onRefresh={onRefresh} noBackground>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>LIVE FEED</Text>
             <View style={styles.liveIndicator}>

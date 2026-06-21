@@ -99,6 +99,7 @@ export default function ViolationsScreen() {
       refreshing={refreshing}
       onRefresh={onRefresh}
       padHorizontal
+      noBackground
     >
       <NeoCard shadow={false} contentStyle={styles.searchInner}>
         <Search size={18} color={NEU.ink} strokeWidth={2.5} />

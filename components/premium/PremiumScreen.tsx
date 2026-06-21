@@ -50,7 +50,7 @@ export function PremiumScreen({
           <RefreshControl
             refreshing={!!refreshing}
             onRefresh={onRefresh}
-            tintColor={COLORS.pearl}
+            tintColor={noBackground ? '#000000' : COLORS.pearl}
           />
         ) : undefined
       }
@@ -66,8 +66,12 @@ export function PremiumScreen({
       {(title || headerRight) && (
         <View style={[styles.header, padHorizontal && styles.padH]}>
           <View style={styles.headerLeft}>
-            {title ? <Text style={styles.headerTitle}>{title}</Text> : null}
-            {subtitle ? <Text style={styles.headerSub}>{subtitle}</Text> : null}
+            {title ? (
+              <Text style={[styles.headerTitle, noBackground && styles.headerTitlePlain]}>{title}</Text>
+            ) : null}
+            {subtitle ? (
+              <Text style={[styles.headerSub, noBackground && styles.headerSubPlain]}>{subtitle}</Text>
+            ) : null}
           </View>
           {headerRight}
         </View>
@@ -77,7 +81,7 @@ export function PremiumScreen({
   );
 
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, noBackground && styles.rootPlain]}>
       {!noBackground && <AegisBackground />}
       <SafeAreaView style={styles.flex}>
         {keyboardAvoiding ? (
@@ -116,6 +120,7 @@ export function SectionTitle({
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: COLORS.abyss },
+  rootPlain: { backgroundColor: '#FFFFFF' },
   flex: { flex: 1 },
   padH: { paddingHorizontal: SPACING.lg },
   header: {
@@ -133,11 +138,17 @@ const styles = StyleSheet.create({
     color: COLORS.pearl,
     letterSpacing: 2,
   },
+  headerTitlePlain: {
+    color: '#000000',
+  },
   headerSub: {
     fontFamily: FONTS.body,
     fontSize: 13,
     color: COLORS.pearlMuted,
     marginTop: 4,
+  },
+  headerSubPlain: {
+    color: '#555555',
   },
   sectionHead: {
     flexDirection: 'row',

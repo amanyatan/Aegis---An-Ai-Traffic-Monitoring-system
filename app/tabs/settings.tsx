@@ -57,7 +57,7 @@ export default function SettingsScreen() {
   ];
 
   return (
-    <PremiumScreen title="SETTINGS" padHorizontal>
+    <PremiumScreen title="SETTINGS" padHorizontal noBackground>
       <NeoCard backgroundColor={PALETTE.cyan} contentStyle={styles.profileCard}>
         <View style={styles.avatar}>
           <User size={32} color={NEU.ink} strokeWidth={2.5} />

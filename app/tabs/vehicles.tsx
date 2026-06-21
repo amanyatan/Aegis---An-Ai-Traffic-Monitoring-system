@@ -126,7 +126,7 @@ export default function VehiclesScreen() {
 
   return (
     <>
-    <PremiumScreen padHorizontal scroll refreshing={refreshing} onRefresh={onRefresh}>
+    <PremiumScreen padHorizontal scroll refreshing={refreshing} onRefresh={onRefresh} noBackground>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>VEHICLE SEARCH</Text>
             <TouchableOpacity onPress={() => setShowAddVehicle(true)} style={styles.addButton}>

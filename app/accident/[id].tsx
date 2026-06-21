@@ -33,7 +33,7 @@ export default function AccidentDetailScreen() {
 
   if (loading) {
     return (
-      <PremiumScreen padHorizontal scroll>
+      <PremiumScreen padHorizontal scroll noBackground>
             <Text style={styles.loadingText}>Loading...</Text>
           </PremiumScreen>
     );
@@ -41,14 +41,14 @@ export default function AccidentDetailScreen() {
 
   if (!accident) {
     return (
-      <PremiumScreen padHorizontal scroll>
+      <PremiumScreen padHorizontal scroll noBackground>
             <Text style={styles.loadingText}>Accident not found</Text>
           </PremiumScreen>
     );
   }
 
   return (
-    <PremiumScreen padHorizontal scroll>
+    <PremiumScreen padHorizontal scroll noBackground>
           <View style={styles.header}>
             <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
               <ArrowLeft size={22} color={COLORS.text} strokeWidth={2} />

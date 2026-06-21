@@ -131,7 +131,7 @@ export default function AnalyticsScreen() {
   const maxSeverity = Math.max(...severityStats.map(v => v.count), 1);
 
   return (
-    <PremiumScreen padHorizontal scroll>
+    <PremiumScreen padHorizontal scroll noBackground>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>ANALYTICS</Text>
             <TouchableOpacity style={styles.periodButton} onPress={() => setShowPeriodPicker(!showPeriodPicker)}>

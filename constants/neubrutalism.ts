@@ -96,14 +96,14 @@ export const STATUS_NEU: Record<string, string> = {
 
 /** Legacy alias — mapped to premium dark theme */
 export const COLORS = {
-  primary: '#E0E1DD',
-  text: '#E0E1DD',
-  textMuted: 'rgba(224, 225, 221, 0.65)',
-  softAccent: '#778DA9',
-  error: '#E07A5F',
-  success: '#5CB8A0',
-  warning: '#C9A227',
-  info: '#6B9AC4',
-  border: 'rgba(119, 141, 169, 0.35)',
-  surface: 'rgba(27, 38, 59, 0.55)',
+  primary: '#FFFFFF',
+  text: '#000000',
+  textMuted: '#555555',
+  softAccent: '#000000',
+  error: '#000000',
+  success: '#000000',
+  warning: '#000000',
+  info: '#000000',
+  border: '#D0D0D0',
+  surface: '#FFFFFF',
 };

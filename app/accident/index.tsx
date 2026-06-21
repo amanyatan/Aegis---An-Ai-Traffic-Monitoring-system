@@ -58,7 +58,7 @@ export default function AccidentsScreen() {
   };
 
   return (
-    <PremiumScreen padHorizontal scroll>
+    <PremiumScreen padHorizontal scroll noBackground>
           <View style={styles.header}>
             <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
               <ChevronRight size={22} color={COLORS.text} style={{ transform: [{ rotate: '180deg' }] }} strokeWidth={2} />
