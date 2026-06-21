@@ -1,0 +1,137 @@
+/* AEGIS premium web animations */
+@keyframes aegis-grid-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+
+@keyframes aegis-aurora-shift {
+  0%, 100% { opacity: 0.35; transform: translate(0, 0) scale(1); }
+  50% { opacity: 0.55; transform: translate(2%, -2%) scale(1.05); }
+}
+
+@keyframes aegis-particle-float {
+  0%, 100% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(-30px); opacity: 0.6; }
+}
+
+@keyframes aegis-scan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.aegis-grid {
+  background-image:
+    linear-gradient(rgba(119, 141, 169, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(119, 141, 169, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: aegis-grid-move 20s linear infinite;
+}
+
+.aegis-aurora {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(65, 90, 119, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(119, 141, 169, 0.25) 0%, transparent 45%);
+  animation: aegis-aurora-shift 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.aegis-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(224, 225, 221, 0.5);
+  animation: aegis-particle-float ease-in-out infinite;
+}
+
+.aegis-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(119, 141, 169, 0.8), transparent);
+  animation: aegis-scan 4s ease-in-out infinite;
+}
+
+.aegis-hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(65, 90, 119, 0.35) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.aegis-horizontal-scroll {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.aegis-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.aegis-horizontal-scroll > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.aegis-glass {
+  background: rgba(27, 38, 59, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(119, 141, 169, 0.22);
+  border-radius: 16px;
+}
+
+.aegis-glass-glow {
+  border-color: rgba(119, 141, 169, 0.45);
+  box-shadow: 0 0 40px rgba(119, 141, 169, 0.15);
+}
+
+.aegis-feature-tilt {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.aegis-feature-tilt:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 30px rgba(119, 141, 169, 0.12);
+}
+
+.aegis-split-auth {
+  display: flex;
+  min-height: 100vh;
+}
+
+.aegis-split-left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.aegis-split-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+@media (max-width: 900px) {
+  .aegis-split-auth {
+    flex-direction: column;
+  }
+  .aegis-split-left {
+    min-height: 40vh;
+  }
+}
