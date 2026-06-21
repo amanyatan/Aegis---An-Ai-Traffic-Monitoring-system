@@ -1,11 +1,11 @@
-/** Recommended neubrutalism palette */
+/** High-contrast black/white palette for operational screens */
 export const PALETTE = {
-  cyan: '#7DF9FF',
-  green: '#2FFF2F',
-  magenta: '#FF00F5',
-  blue: '#3300FF',
-  yellow: '#FFFF00',
-  orange: '#FF4911',
+  cyan: '#FFFFFF',
+  green: '#000000',
+  magenta: '#000000',
+  blue: '#000000',
+  yellow: '#FFFFFF',
+  orange: '#000000',
 } as const;
 
 export const NEU = {
@@ -46,7 +46,7 @@ export function useNeuTheme(): NeuTheme {
   return getNeuTheme();
 }
 
-const LIGHT_BACKGROUNDS = new Set<string>([PALETTE.cyan, PALETTE.green, PALETTE.yellow, NEU.paper]);
+const LIGHT_BACKGROUNDS = new Set<string>([PALETTE.cyan, PALETTE.yellow, NEU.paper]);
 
 export function iconColorForFill(fillColor: string): string {
   if (LIGHT_BACKGROUNDS.has(fillColor)) return NEU.ink;
@@ -61,37 +61,37 @@ export const STAT_FILLS = [PALETTE.orange, PALETTE.yellow, PALETTE.green, PALETT
 export const ACTION_FILLS = [PALETTE.blue, PALETTE.magenta, PALETTE.cyan, PALETTE.orange] as const;
 
 export const SEVERITY_NEU: Record<string, string> = {
-  low: PALETTE.cyan,
-  minor: PALETTE.cyan,
-  info: PALETTE.cyan,
-  medium: PALETTE.yellow,
-  moderate: PALETTE.yellow,
-  warning: PALETTE.yellow,
-  high: PALETTE.orange,
-  major: PALETTE.orange,
-  critical: PALETTE.magenta,
-  fatal: PALETTE.magenta,
+  low: NEU.ink,
+  minor: NEU.ink,
+  info: NEU.ink,
+  medium: NEU.ink,
+  moderate: NEU.ink,
+  warning: NEU.ink,
+  high: NEU.ink,
+  major: NEU.ink,
+  critical: NEU.ink,
+  fatal: NEU.ink,
 };
 
 export const STATUS_NEU: Record<string, string> = {
-  active: PALETTE.green,
-  online: PALETTE.green,
-  pending: PALETTE.yellow,
-  confirmed: PALETTE.magenta,
-  resolved: PALETTE.green,
-  recovered: PALETTE.green,
-  missing: PALETTE.orange,
-  searching: PALETTE.yellow,
-  closed: PALETTE.cyan,
-  dismissed: PALETTE.cyan,
-  reviewed: PALETTE.blue,
-  paid: PALETTE.green,
-  offline: '#AAAAAA',
-  maintenance: PALETTE.yellow,
-  error: PALETTE.magenta,
-  responded: PALETTE.blue,
-  investigating: PALETTE.yellow,
-  cleared: PALETTE.green,
+  active: NEU.ink,
+  online: NEU.ink,
+  pending: NEU.ink,
+  confirmed: NEU.ink,
+  resolved: NEU.ink,
+  recovered: NEU.ink,
+  missing: NEU.ink,
+  searching: NEU.ink,
+  closed: '#555555',
+  dismissed: '#555555',
+  reviewed: NEU.ink,
+  paid: NEU.ink,
+  offline: '#555555',
+  maintenance: NEU.ink,
+  error: NEU.ink,
+  responded: NEU.ink,
+  investigating: NEU.ink,
+  cleared: NEU.ink,
 };
 
 /** Legacy alias — mapped to premium dark theme */
